@@ -84,11 +84,13 @@ void supla_datalogger::log_ic_measurement(void) {
   int a;
   int n = 0;
   void *icarr = safe_array_init();
+  supla_log(LOG_DEBUG, "==>log_ic_measurement (1)");
 
   while ((user = supla_user::get_user(n)) != NULL) {
     n++;
     user->get_ic_measurement(icarr);
   }
+  supla_log(LOG_DEBUG, "==>log_ic_measurement (2)");
 
   for (a = 0; a < safe_array_count(icarr); a++) {
     supla_channel_ic_measurement *ic =
@@ -97,6 +99,7 @@ void supla_datalogger::log_ic_measurement(void) {
       db->add_impulses(ic);
     }
   }
+  supla_log(LOG_DEBUG, "==>log_ic_measurement (3)");
 
   supla_channel_ic_measurement::free(icarr);
 }

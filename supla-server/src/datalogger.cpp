@@ -97,7 +97,8 @@ void supla_datalogger::log_ic_measurement(void) {
   for (a = 0; a < safe_array_count(icarr); a++) {
     supla_channel_ic_measurement *ic =
         (supla_channel_ic_measurement *)safe_array_get(icarr, a);
-//	supla_log(LOG_DEBUG, "==>Channel_id=%i", ic.ChannelId);
+	supla_log(LOG_DEBUG, "==>log_ic_measurement (2a)");
+	supla_log(LOG_DEBUG, "==>Channel_id=%i", icarr.ChannelId);
 //	supla_log(LOG_DEBUG, "==>Value=%i", ic.counter);
 	
 	if (ic) {

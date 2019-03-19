@@ -277,6 +277,7 @@ void serverconnection::on_remote_call_received(void *_srpc, unsigned int rr_id,
       case SUPLA_DS_CALL_REGISTER_DEVICE_D:
 
         supla_log(LOG_DEBUG, "SUPLA_DS_CALL_REGISTER_DEVICE_D");
+        supla_log(LOG_DEBUG, "Rejestracja urzadzenia D");
 
         if (cdptr == NULL && rd.data.ds_register_device_d != NULL) {
           TDS_SuplaRegisterDevice_E *register_device_e =
@@ -328,6 +329,7 @@ void serverconnection::on_remote_call_received(void *_srpc, unsigned int rr_id,
        * SUPLA_DS_CALL_REGISTER_DEVICE_E!!! */
       case SUPLA_DS_CALL_REGISTER_DEVICE_E:
         supla_log(LOG_DEBUG, "SUPLA_DS_CALL_REGISTER_DEVICE_E");
+        supla_log(LOG_DEBUG, "Rejestracja urzadzenia E");
 
         if (cdptr == NULL && rd.data.ds_register_device_e != NULL) {
           device = new supla_device(this);

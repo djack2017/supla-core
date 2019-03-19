@@ -1562,7 +1562,7 @@ void database::add_impulses(supla_channel_ic_measurement *ic) {
   unsigned _supla_int64_t counter = ic->getCounter();
   unsigned _supla_int64_t calculatedValue = ic->getCalculatedValue();
 
-  supla_log(LOG_DEBUG, "==>add_impulses: channel:%i", ChannelID);
+  supla_log(LOG_DEBUG, "==>add_impulses: channel:%i", ChannelId);
   supla_log(LOG_DEBUG, "==>add_impulses: value:%i", counter);
 
   pbind[0].buffer_type = MYSQL_TYPE_LONG;

@@ -137,8 +137,9 @@ void svr_ipcctrl::get_char(const char *cmd) {
   int ChannelID = 0;
   char Value;
 
-  sscanf(&buffer[strnlen(cmd, IPC_BUFFER_SIZE)], "%i,%i,%i", &UserID, &DeviceID,
-         &ChannelID);
+  sscanf(&buffer[strnlen(cmd, IPC_BUFFER_SIZE)], "%i,%i,%i", &UserID, &DeviceID, &ChannelID);
+  
+  supla_log(LOG_DEBUG, "==>get_char: channel: UserID=%i DeviceID=%i ChannelID=%i", &UserID, &DeviceID, &ChannelID);
 
   if (UserID && DeviceID && ChannelID) {
     bool r =

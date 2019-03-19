@@ -390,6 +390,8 @@ void supla_device::on_channel_set_value_result(
 
 bool supla_device::get_channel_value(int ChannelID,
                                      char value[SUPLA_CHANNELVALUE_SIZE]) {
+  supla_log(LOG_DEBUG, "==>get_channel_value: channel:%i", ChannelId);
+  supla_log(LOG_DEBUG, "==>get_channel_value: value:%s", value);
   return channels->get_channel_value(ChannelID, value);
 }
 

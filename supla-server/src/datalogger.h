@@ -21,9 +21,9 @@
 
 #include "database.h"
 
-#define TEMPLOG_INTERVAL 600
+#define TEMPLOG_INTERVAL 60
 #define ELECTRICITYMETERLOG_INTERVAL 600
-#define IMPULSECOUNTERLOG_INTERVAL 600
+#define IMPULSECOUNTERLOG_INTERVAL 60
 
 class supla_datalogger {
  private:
